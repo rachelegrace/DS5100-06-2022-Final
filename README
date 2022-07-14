@@ -6,55 +6,189 @@ Project Name: Montecarlo Simulator, DS5100 Final Project
 ## Synopsis
 
 #### To install the montecarlo package, execute the following command:
-'''
 pip install -e .
-'''
 You will need to have pandas and numpy installed.
 
 #### To import the montecarlo package classes, execute the following commands:
-'''
 from montecarlo.montecarlo import Die
 from montecarlo.montecarlo import Game
 from montecarlo.montecarlo import Analyzer
-'''
 
 #### To create and use a die object, execute commands with this structure:
-'''
 die1 = Die(np.array([1, 2, 3, 4]))
 die1.change_weight(1, 5.)
 die1.roll_die(5)
 die1.show_faces_and_weights()
-'''
 
 #### To create and use a game object, execute commands with this structure:
-'''
 game1 = Game([die1, die1, die1])
 game1.play(20)
 game1.show_play_results('W')
-'''
 
 #### To create and use an analyzer object, execute commands with this structure:
-'''
 analyzer1 = Analyzer(game1)
 analyzer1.jackpot()
 analyzer1.combo()
 analyzer1.count_faces_per_roll()
-'''
 
 ## API Description
-class Die:
+See INPUTS and OUTPUTS under each class and function for descriptions of parameters and return values.
+
+class Die
     '''
     PURPOSE: creates a die with N sides, or “faces”, and W weights, that can be rolled to select a face
     
     INPUTS:
     die_faces   array of die faces, either strings or numbers
-    face_value  one die face, either a string or number
+    face_value  one die face, either a string, float, or integer
     new_weight  a new value for a weight, a float or a type to be converted to float
-    roll_times  the number of times to roll the die
+    roll_times  the number of times to roll the die, an integer
     
     OUTPUTS:
     format_results   list of die faces
     '''
     
-
+    attribute weight_list[]
+    '''
+    DESCRIPTION: list that defaults to a list of ones
+    
+    PURPOSE: to store weights passed to a dataframe representing a die object
+    '''
+    
+    function change_weight(self, face_value, new_weight)
+        '''
+        PURPOSE: changes the weight for one side of the die
+        
+        INPUTS:
+        face_value   a die face, a string, float, or integer
+        new_weight   a new weight value, a float or a type to be converted to float
+        
+        OUTPUTS:
+        None
+        '''
+    function roll_die(self, roll_times=1)
+        '''
+        PURPOSE: to roll the die one or more times
+        
+        INPUTS:
+        roll_times   integer to specify how many times to roll the die, defaults to 1
+        
+        OUTPUTS:
+        format_results  list of results from rolling the die
+        '''
+        
+    function show_faces_and_weights(self)
+        '''
+        PURPOSE: to show the user the die's current set of faces and weights
+        
+        INPUTS:
+        None
+        
+        OUTPUTS:
+        self.__die   the private dataframe displaying the die object
+        '''
+        
+class Game
+    '''
+    PURPOSE: to roll one or more dice of the same kind one or more times
+        
+    INPUTS:
+    die_objects    list of die objects
+    rolls          number of times to roll the die objects, an integer
+    form           mode to return the results of the game in, a string
+    
+    OUTPUTS:
+    self.__results   private dataframe storing results of the game
+    '''
+    
+    function play(self, rolls)
+        '''
+        PURPOSE: rolls the die/dice however many times are specified
+        
+        INPUTS:
+        rolls   number of times to roll the die objects, an integer
+        
+        OUTPUTS:
+        None
+        '''
+        
+    function show_play_results(self, form = 'W')
+        '''
+        PURPOSE: shows the user the results of the most recent play
+        
+        INPUTS:
+        form    mode to return the results of the game in, a string, defaults to 'W'
+        
+        OUTPUTS:
+        self.__results   private dataframe storing results of the game
+        '''
+        
+class Analyzer
+    '''
+    PURPOSE: to take the results of a single game and compute various descriptive statistical properties about it
+        
+    INPUTS:
+    game_object   object from Game class
+        
+    OUTPUTS:
+    jackpot_times   number of times the game hit the jackpot, an integer
+    self.jackpots   dataframe storing jackpot rolls throughout the game
+    combos          dataframe storing unique combos during the game
+    counts          dataframe storing frequency of faces rolled during the game
+    '''
+    
+    attribute results
+        '''
+        This is a dataframe to store the results of a game object
+        '''
+    
+    attribute jackpots
+        '''
+        This is a dataframe to store the output of the jackpot() method
+        '''
+        
+    attribute combos
+        '''
+        This is a dataframe to store the output of the combo() method
+        '''
+        
+    attribute counts
+        '''
+        This is a dataframe to store the output of the counts() method
+        '''
+        
+    function jackpot(self)
+        '''
+        PURPOSE: to compute how many times the game resulted in all faces being identical
+        
+        INPUTS:
+        None
+        
+        OUTPUTS:
+        jackpot_times   number of times the game hit the jackpot, an integer
+        self.jackpots   dataframe storing jackpot rolls throughout the game
+        '''
+        
+    function combo(self)
+        '''
+        PURPOSE: to compute the distinct combinations of faces rolled, along with their counts
+        
+        INPUTS:
+        None
+        
+        OUTPUTS:
+        combos     dataframe storing unique combos during the game
+        '''
+        
+    function count_faces_per_roll(self)
+        '''
+        PURPOSE: to compute how many times a given face is rolled in each event
+        
+        INPUTS:
+        None
+        
+        OUTPUTS:
+        counts     dataframe storing frequency of faces rolled during the game
+        '''
+        
 ## Manifest
