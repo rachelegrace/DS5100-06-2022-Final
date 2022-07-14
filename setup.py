@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='DS5100-2022-06-Final',
+    name='montecarlo',
     version='1.0.0',
     url='https://github.com/rachelegrace/DS5100-2022-06-Final.git',
     author='Rachel Grace',
