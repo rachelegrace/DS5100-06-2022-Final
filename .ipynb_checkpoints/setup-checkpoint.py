@@ -8,5 +8,5 @@ setup(
     author_email='rg5xm@virginia.edu',
     description='DS5100 Final Project - Montecarlo Simulator',
     packages=find_packages(),    
-    install_requires=['numpy', 'pandas', 'random', 'IPython.display'],
+    install_requires=['numpy', 'pandas'],
 )
