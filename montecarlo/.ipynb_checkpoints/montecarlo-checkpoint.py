@@ -6,7 +6,7 @@ from IPython.display import display
 class Die:
     '''
     PURPOSE: creates a die with N sides, or “faces”, and W weights, that can be rolled to select a face
-    
+
     INPUTS:
     die_faces   array of die faces, either strings or numbers
     face_value  one die face, either a string or number
