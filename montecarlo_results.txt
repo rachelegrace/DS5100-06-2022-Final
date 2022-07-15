@@ -1,34 +1,13 @@
-test_N_show_play_results (__main__.FinalProjectUnitTests)
-PURPOSE: this method tests the method show_play_results() in Game ... ok
-test_change_weight (__main__.FinalProjectUnitTests)
-PURPOSE: this method tests the method change_weight() in Die ... 
-Hi!
-C:\Users\Rachel\Documents\GitHub\DS5100-2022-06-Final\montecarlo\montecarlo.py:57: SettingWithCopyWarning: 
+python : .C:\Users\Rachel\OneDrive\MSDS\DS5100\FinalProject\montecarlo_simulator.py:51: SettingWithCopyWarning: At line:1 char:1
+
+python C:\Users\Rachel\OneDrive\MSDS\DS5100\FinalProject\montecarlo_t ...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CategoryInfo : NotSpecified: (.C:\Users\Rache...thCopyWarning: :String) [], RemoteException
+FullyQualifiedErrorId : NativeCommandError
 A value is trying to be set on a copy of a slice from a DataFrame
 
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  self.__die['W (weights)'][idx] = new_weight
-ok
-test_combo (__main__.FinalProjectUnitTests)
-PURPOSE: this method tests the method combo() in Analyzer ... ok
-test_count_faces_per_roll (__main__.FinalProjectUnitTests)
-PURPOSE: this method tests the method count_faces_per_roll() in Analyzer ... ok
-test_jackpot (__main__.FinalProjectUnitTests)
-PURPOSE: this method tests the method jackpot() in Analyzer ... 
-1	2	3
-Roll Number			
-14	1	1	1
-15	2	2	2
-19	3	3	3
-ok
-test_play (__main__.FinalProjectUnitTests)
-PURPOSE: this method tests the method play() in Game ... ok
-test_roll_die (__main__.FinalProjectUnitTests)
-PURPOSE: this method tests the method roll_die() in Die ... ok
-test_show_faces_and_weights (__main__.FinalProjectUnitTests)
-PURPOSE: this method tests the method show_faces_and_weights() in Die ... ok
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy self.__die['W (weights)'][idx] = new_weight .......
 
-----------------------------------------------------------------------
-Ran 8 tests in 0.409s
+Ran 8 tests in 0.205s
 
 OK
