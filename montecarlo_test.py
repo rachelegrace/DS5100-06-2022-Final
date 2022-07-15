@@ -1,7 +1,7 @@
 import unittest
-from montecarlo_simulator import Die
-from montecarlo_simulator import Game
-from montecarlo_simulator import Analyzer
+from montecarlo import Die
+from montecarlo import Game
+from montecarlo import Analyzer
 import pandas as pd
 import numpy as np
 
