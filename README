@@ -200,6 +200,7 @@ DS5100-2022-06-Final/
     montecarlo_scenarios.ipynb
     montecarlo_test.py
     README
+    LICENSE
     setup.py
     montecarlo/
         __init__.py
