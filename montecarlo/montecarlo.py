@@ -21,6 +21,12 @@ class Die:
     weight_list = []
     
     def __init__(self, die_faces):
+        '''
+        PURPOSE: to initialize the class Die
+        
+        INPUTS:
+        die_faces   array of die faces, either strings or numbers
+        '''
         self.die_faces = die_faces.tolist()
         self.weight_list = np.ones(len(self.die_faces))
         self.__die = pd.DataFrame({'N (faces)':self.die_faces,
@@ -95,6 +101,12 @@ class Game:
     __results = 0
 
     def __init__(self, die_objects):
+        '''
+        PURPOSE: to initialize the class Game
+        
+        INPUTS:
+        die_objects   list of die objects
+        '''
         self.die_objects = die_objects
         
     def play(self, rolls):
@@ -148,6 +160,12 @@ class Analyzer:
     counts = pd.DataFrame([])
     
     def __init__(self, game_object):
+        '''
+        PURPOSE: to initialize the class Analyzer
+        
+        INPUTS:
+        game_object   object from Game class
+        '''
         self.game_object = game_object
         self.results = self.game_object.show_play_results()
         

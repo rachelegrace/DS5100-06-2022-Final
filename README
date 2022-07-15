@@ -1,37 +1,38 @@
-## Metadata
+METADATA
 
 Name: Rachel Grace
 Project Name: Montecarlo Simulator, DS5100 Final Project
 
-## Synopsis
+SYNOPSIS
 
-#### To install the montecarlo package, execute the following command:
+To install the montecarlo package, execute the following command:
 pip install -e .
 You will need to have pandas and numpy installed.
 
-#### To import the montecarlo package classes, execute the following commands:
+To import the montecarlo package classes, execute the following commands:
 from montecarlo.montecarlo import Die
 from montecarlo.montecarlo import Game
 from montecarlo.montecarlo import Analyzer
 
-#### To create and use a die object, execute commands with this structure:
+To create and use a die object, execute commands with this structure:
 die1 = Die(np.array([1, 2, 3, 4]))
 die1.change_weight(1, 5.)
 die1.roll_die(5)
 die1.show_faces_and_weights()
 
-#### To create and use a game object, execute commands with this structure:
+To create and use a game object, execute commands with this structure:
 game1 = Game([die1, die1, die1])
 game1.play(20)
 game1.show_play_results('W')
 
-#### To create and use an analyzer object, execute commands with this structure:
+To create and use an analyzer object, execute commands with this structure:
 analyzer1 = Analyzer(game1)
 analyzer1.jackpot()
 analyzer1.combo()
 analyzer1.count_faces_per_roll()
 
-## API Description
+API DESCRIPTION
+
 See INPUTS and OUTPUTS under each class and function for descriptions of parameters and return values.
 
 class Die
@@ -191,4 +192,15 @@ class Analyzer
         counts     dataframe storing frequency of faces rolled during the game
         '''
         
-## Manifest
+MANIFEST
+
+DS5100-2022-06-Final/
+    Final Project Submission.ipynb
+    montecarlo_results.txt
+    montecarlo_scenarios.ipynb
+    montecarlo_test.py
+    README
+    setup.py
+    montecarlo/
+        __init__.py
+        montecarlo.py
